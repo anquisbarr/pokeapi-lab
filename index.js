@@ -13,7 +13,7 @@ var URL = 'https://pokeapi.co/api/v2/pokemon/';
       {
         to: [
           {
-            email: "cbalbuena@utec.edu.pe",
+            email: "sebastian.quispe.b@utec.edu.pe",
           },
         ],
         subject: "Group 2, server error, 500",
@@ -41,7 +41,7 @@ var URL = 'https://pokeapi.co/api/v2/pokemon/';
     data: emailData,
   };
 
-  console.log(emailData);
+  // console.log(emailData);
 
   axios
     .request(options)
@@ -71,11 +71,9 @@ app.get('/query', (req, res, next) => {
       })
       .error((error) => {
         sendLoginEmail().then(res=>console.log("correo enviado"))
-        next(error)
       });
   } catch (error) {
     sendLoginEmail().then(res=>console.log("correo enviado"))
-    next(error)
   }
 });
 
